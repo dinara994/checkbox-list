@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 const EmployerItem = ({item, isCheckedAll, handleCheck}) => {
+
     const [isChecked, setIsChecked] = useState(false)
 
     useEffect(() => {
@@ -8,7 +9,6 @@ const EmployerItem = ({item, isCheckedAll, handleCheck}) => {
     },[isCheckedAll])
 
     return (
-        <tbody>
         <tr className='table-info'>
             <td>
                 <input type="checkbox"
@@ -16,14 +16,12 @@ const EmployerItem = ({item, isCheckedAll, handleCheck}) => {
                        onChange={(e) => {
                            setIsChecked(e.target.checked)
                            handleCheck(item.id, e.target.checked)
-                       }}
-                />
+                       }}/>
             </td>
-            <td>{item.name}</td>
-            <td>{item.surname}</td>
-            <td>{item.age}</td>
+            <td><p>{item.name}</p></td>
+            <td><p>{item.surname}</p></td>
+            <td><p>{item.age}</p></td>
         </tr>
-        </tbody>
     );
 };
 
